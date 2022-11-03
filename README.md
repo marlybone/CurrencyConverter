@@ -15,3 +15,8 @@ By default, Replit runs the `dev` script, but you can configure it by changing t
 ### Typescript
 
 Just rename any file from `.jsx` to `.tsx`. You can also try our [TypeScript Template](https://replit.com/@replit/React-TypeScript)
+
+
+Thanks to the tutorial by Web Deb Simplified.
+
+I used this exercise to gain experience in utilising an API and GET requests while learning REACT. 
