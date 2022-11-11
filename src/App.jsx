@@ -1,8 +1,10 @@
 import './App.css'
 import Currency from './Currency'
 import React, { useEffect, useState } from 'react'
+import Crypto from './Crypto'
 
 const BASE_URL = 'https://api.exchangerate.host/latest';
+const CRYPTO_URL = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=gbp&order=market_cap_desc&per_page=10&page=1&sparkline=false&price_change_percentage=24h';
 
 export default function App() {
 const [currencyOptions, setCurrencyOptions] = useState([])
@@ -51,9 +53,18 @@ function toAmountChange(e) {
   setAmount(e.target.value)
   setAmountCurrency(false)
 }  
+
+ useEffect(() => {
+    fetch(CRYPTO_URL)
+    .then(res => res.json())
+    .then(data => {
+      console.log(data)
+    })
+          },[])
   
 return (
     <main>
+      <Crypto/>
       <h1>Currency Converter</h1>
       <Currency 
         currencyOptions={currencyOptions}
@@ -73,3 +84,6 @@ return (
     </main>
   )
 }
+
+
+
