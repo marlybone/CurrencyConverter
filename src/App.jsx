@@ -2,11 +2,26 @@ import './App.css'
 import Currency from './Currency'
 import React, { useEffect, useState } from 'react'
 import Crypto from './Crypto'
+import 'react-alice-carousel/lib/alice-carousel.css'
+
 
 const BASE_URL = 'https://api.exchangerate.host/latest';
-const CRYPTO_URL = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=gbp&order=market_cap_desc&per_page=10&page=1&sparkline=false&price_change_percentage=24h';
+const CRYPTO_URL = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=gbp&order=gecko_desc&per_page=10&page=1&sparkline=false&price_change_percentage=24h';
 
 export default function App() {
+
+const [trending, setTrending] = useState([])
+  
+ useEffect(() => {
+    fetch(CRYPTO_URL)
+    .then(res => res.json())
+    .then(data => {
+      setTrending(data)
+    })
+   },[])
+
+
+  
 const [currencyOptions, setCurrencyOptions] = useState([])
 const [fromCurrency, setFromCurrency] = useState()
 const [toCurrency, setToCurrency] = useState()
@@ -53,18 +68,12 @@ function toAmountChange(e) {
   setAmount(e.target.value)
   setAmountCurrency(false)
 }  
-
- useEffect(() => {
-    fetch(CRYPTO_URL)
-    .then(res => res.json())
-    .then(data => {
-      console.log(data)
-    })
-          },[])
   
 return (
     <main>
-      <Crypto/>
+      <Crypto 
+        trending={trending}
+        />
       <h1>Currency Converter</h1>
       <Currency 
         currencyOptions={currencyOptions}
