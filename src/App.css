@@ -1,48 +1,44 @@
 @import "react-alice-carousel/lib/alice-carousel.css";
 
-body {
+p {
   margin: 0;
   display: flex;
   justify-content: center;
   align-items:  center;
   text-align: center;
   vertical-align: center;
-  min-height: 100vh
+  margin-top: 10;
 }
 
-.h1 {
-  margin: 0;
-  margin-bottom: 1rem;
-}
 
 .input {
-  border: 1px solid #000;
-  border-radius: .3em;
+  border: 0.5px solid #000;
+  border-radius: .2em;
   padding: 0.5rem;
   width: 7em;
 }
 
 .selector {
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
 select {
-  margin-left: .5rem;
-  width: 20%;
+  margin-left: .6rem;
+  width:30%;
 }
 
 carouselItem: {
 display: flex;
-flexDirection: column;
 alignItems: center;
 cursor: pointer;
 textTransform: uppercase;
 color: white;
+flexDirection: column;
 }
 
-  carousel: {
-      height: 50%;
-      display: flex;
-      alignItems: center;
+carousel: {
+height: 50%;
+display: flex;
+alignItems: center;
 }

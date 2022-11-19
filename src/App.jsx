@@ -19,8 +19,6 @@ const [trending, setTrending] = useState([])
       setTrending(data)
     })
    },[])
-
-
   
 const [currencyOptions, setCurrencyOptions] = useState([])
 const [fromCurrency, setFromCurrency] = useState()
@@ -70,29 +68,35 @@ function toAmountChange(e) {
 }  
   
 return (
-    <main>
-      <Crypto 
-        trending={trending}
-        />
-      <h1>Currency Converter</h1>
-      <Currency 
-        currencyOptions={currencyOptions}
-        selectCurrency={fromCurrency}
-        onChangeCurrency={e => setFromCurrency(e.target.value)}
-        amount={fromAmount}
-        OnChangeAmount={fromAmountChange}
-        />
-      <div className='selector'>=</div>
-      <Currency 
-        currencyOptions={currencyOptions}
-        selectCurrency={toCurrency}
-        onChangeCurrency={e => setToCurrency(e.target.value)}
-        amount={toAmount}
-        OnChangeAmount={toAmountChange}
-        />
-    </main>
-  )
-}
 
-
-
+      <html>
+        <header>
+        <Crypto
+        trending={trending} />
+          </header>
+            <main>
+                <p>
+                <h1>Currency Converter</h1>
+                </p>
+              <p>
+                <Currency
+                    currencyOptions={currencyOptions}
+                    selectCurrency={fromCurrency}
+                    onChangeCurrency={e => setFromCurrency(e.target.value)}
+                    amount={fromAmount}
+                    OnChangeAmount={fromAmountChange} />
+                </p>
+              <p>
+                <div className='selector'>=</div>
+               </p> 
+              <p>
+                <Currency
+                    currencyOptions={currencyOptions}
+                    selectCurrency={toCurrency}
+                    onChangeCurrency={e => setToCurrency(e.target.value)}
+                    amount={toAmount}
+                    OnChangeAmount={toAmountChange} />
+                </p>
+            </main>
+       </html>
+  )}
