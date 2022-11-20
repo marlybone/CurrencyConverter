@@ -9,25 +9,39 @@ const {
     trending
 } = props
 
-  
         const items = trending.map((coin) => { 
           const profit = coin?.price_change_percentage_24h_in_currency >= 0;
     return (
-      <div className="carouselItem">
+      <div style={{
+          justifyContent: "center",
+          textAlign: "center",
+          
+      }}>
         <img 
           src={coin?.image}
           alt={coin?.name}
           height="80"
-          style={{ marginBottom: 10 }}
+          style={{ marginBottom: 10,
+                   marginTop: 15,
+                 }}
           ></img>
-        <div style={{
-              color: profit > 0 ? "rgb(14, 203, 129)" : "red",
+        <div
+          style={{
               fontWeight: 500,
-            }}>
+              marginBottom: 50, 
+              padding: "0.3rem",
+              color: "white",
+                }}>
           {coin?.symbol?.toUpperCase()}
-          <div>
-            {profit && '+'}
-            {coin?.price_change_percentage_24h_in_currency?.toFixed(2)}%
+          <div
+            style={{
+              color: profit > 0 ? "rgb(14, 203, 129)" : "red",
+            }}>
+          {profit && '+'}
+          {coin?.price_change_percentage_24h_in_currency?.toFixed(2)}%
+          </div>
+          <div className="price">
+          {"£" + coin?.current_price.toFixed(2)}
           </div>
         </div>
       </div>
@@ -35,8 +49,8 @@ const {
  })  
 
     const responsive = {
-      0: { items: 4 },
-      1024: { items: 8 },
+      0: { items: 2 },
+      1024: { items: 4 },
     };
 
     return <div className="carousel">

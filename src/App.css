@@ -1,6 +1,12 @@
 @import "react-alice-carousel/lib/alice-carousel.css";
 
-p {
+:root {
+  background-image: url("../banner3.jpg");
+  font-family: Georgia;
+}
+
+
+.currency {
   margin: 0;
   display: flex;
   justify-content: center;
@@ -21,6 +27,7 @@ p {
 .selector {
   font-weight: bold;
   font-size: 3rem;
+  text-align: center;
 }
 
 select {
@@ -28,17 +35,27 @@ select {
   width:30%;
 }
 
-carouselItem: {
+.carouselitem: {
 display: flex;
 alignItems: center;
 cursor: pointer;
 textTransform: uppercase;
 color: white;
 flexDirection: column;
+
 }
 
-carousel: {
+.carousel: {
 height: 50%;
 display: flex;
-alignItems: center;
+}
+
+.price {
+  color: white;
+  padding: 0.3rem;
+}
+
+h1 {
+  color: white;
+
 }

@@ -69,34 +69,29 @@ function toAmountChange(e) {
   
 return (
 
-      <html>
-        <header>
-        <Crypto
-        trending={trending} />
-          </header>
+   
             <main>
-                <p>
+              <Crypto
+        trending={trending} />
+                <div className="currency">
                 <h1>Currency Converter</h1>
-                </p>
-              <p>
+                </div>
+              <div className="currency">
                 <Currency
                     currencyOptions={currencyOptions}
                     selectCurrency={fromCurrency}
                     onChangeCurrency={e => setFromCurrency(e.target.value)}
                     amount={fromAmount}
-                    OnChangeAmount={fromAmountChange} />
-                </p>
-              <p>
+                    OnChangeAmount={fromAmountChange} /></div>
                 <div className='selector'>=</div>
-               </p> 
-              <p>
+              <div className="currency">
                 <Currency
                     currencyOptions={currencyOptions}
                     selectCurrency={toCurrency}
                     onChangeCurrency={e => setToCurrency(e.target.value)}
                     amount={toAmount}
                     OnChangeAmount={toAmountChange} />
-                </p>
+                </div>
             </main>
-       </html>
+
   )}
