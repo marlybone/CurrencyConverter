@@ -71,8 +71,12 @@ return (
 
    
             <main>
+            <div className="carouselImage">
               <Crypto
         trending={trending} />
+            </div>
+              <div className="boxes">
+              <div className="currencyBox">
                 <div className="currency">
                 <h1>Currency Converter</h1>
                 </div>
@@ -90,8 +94,11 @@ return (
                     selectCurrency={toCurrency}
                     onChangeCurrency={e => setToCurrency(e.target.value)}
                     amount={toAmount}
-                    OnChangeAmount={toAmountChange} />
+                    OnChangeAmount={toAmountChange} />          
                 </div>
+              </div>
+                <div className="boxTwo"></div>
+            </div>
             </main>
 
   )}
